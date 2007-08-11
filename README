@@ -1,0 +1,5 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=1989
+
+This script will show a git diff in vimdiff format. -g will use gvimdiff instead of vimdiff.
+
+It creates a temporary file based on the diff output of git diff, and then runs vimdiff (or gvimdiff) against that. On completion it should delete the temporary files.
