@@ -46,7 +46,7 @@ patch=`tempfile --suffix $suffix`
 tempfiles="$patch"
 if [ -z $files ] || ! [ -f $files ] ; then
     # No file given, so loop over all files svn st says have changed
-    files=$(git status 2> /dev/null | grep -e "modified:" | cut -c 15-)
+    files=$(git status 2> /dev/null | grep -e "modified:" | sed '{s/\tmodified://;}')
     for f in $files; do
       if ! [ -f $f ]; then break; fi
       orig=`tempfile --suffix $suffix`
